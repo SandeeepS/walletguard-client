@@ -1,15 +1,16 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
-const UserLayout: React.FC = () => {
+const Layout: React.FC = () => {
   return (
     <>
       <div>{/**provide header herer */}</div>
 
       <div>
-        
+        <Outlet/>
       </div>
     </>
   );
 };
 
-export default UserLayout;
+export default Layout;
