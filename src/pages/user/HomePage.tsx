@@ -2,10 +2,10 @@ import React from 'react'
 
 const HomePage:React.FC = () => {
   return (
-    <div >
-      <h1>This is home page </h1>
+    <div  className="">
+      <h1 className='mt-12 '>This is home pag</h1>
     </div>
   )
 }
 
-export default HomePage
+export default HomePage;
