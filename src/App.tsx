@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./App.css";
 import { appRoutes } from "./routes";
 import { Suspense } from "react";
 import FallBackUI from "./components/common/FallBackUI";

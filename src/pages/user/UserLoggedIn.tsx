@@ -1,10 +1,13 @@
+import { Navigate, Outlet } from "react-router-dom";
+import { useAppSelector } from "../../app/store";
 
 const UserLoggedIn = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const { userData } = useAppSelector((state) => state.auth);
+  if (userData) {
+    return <Outlet />;
+  } else {
+    return <Navigate to="/auth/login" />;
+  }
+};
 
-export default UserLoggedIn
+export default UserLoggedIn;
