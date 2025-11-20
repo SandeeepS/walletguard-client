@@ -23,11 +23,11 @@ const LoginPage: React.FC = () => {
       try {
         setIsLoading(true);
         const response = await login(values.email, values.password);
-        console.log("response from the backend is ", response);
-        const loginResp = response?.data?.data?.loginResponse;
+        const loginResp = response?.data?.data;
+        console.log("response from the backend is ", loginResp);
+
         if (response?.data?.success && loginResp != null) {
-          dispatch(setUserCredential(loginResp.data));
-          localStorage.setItem("token", loginResp.token);
+          dispatch(setUserCredential(loginResp));
           navigate("/homepage");
         } else {
           console.log("login failed ");

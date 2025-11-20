@@ -26,7 +26,7 @@ const SignupPage: React.FC = () => {
         const response = await signup({
           name: values.name,
           email: values.email,
-          phone: values.phone,
+          phoneNumber: values.phone,
           password: values.password,
           confirmPassword: values.confirmPassword,
         });

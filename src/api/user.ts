@@ -4,16 +4,23 @@ import userRoutes from "../services/endPoints/userEndPoints";
 
 const signup = async ({
   name,
-  phone,
+  phoneNumber,
   email,
   password,
   confirmPassword,
 }: FormData) => {
   try {
-    console.log("Entered in signup ");
+    console.log(
+      "Entered in signup ",
+      name,
+      phoneNumber,
+      email,
+      password,
+      confirmPassword
+    );
     const result = await Api.post(userRoutes.signup, {
       name,
-      phone,
+      phoneNumber,
       email,
       password,
       confirmPassword,
