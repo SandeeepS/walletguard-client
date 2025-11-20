@@ -1,11 +1,13 @@
-import React from 'react'
-
-const HomePage:React.FC = () => {
+import React from "react";
+import MainWalletCard from "../../components/user/MainWalletCard";
+const HomePage: React.FC = () => {
   return (
-    <div  className="">
-      <h1 className='mt-12 '>This is home pag</h1>
-    </div>
-  )
-}
+    <>
+      <div>
+        <MainWalletCard />
+      </div>
+    </>
+  );
+};
 
 export default HomePage;
