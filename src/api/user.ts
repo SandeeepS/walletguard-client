@@ -43,4 +43,54 @@ const login = async (email: string, password: string) => {
     console.log("error from the login from the ueser.ts", error as Error);
   }
 };
-export { signup, login };
+
+const deposit = async (amount: number) => {
+  try {
+    console.log("calling deposit api", amount);
+    const result = await Api.post(userRoutes.deposit, amount);
+    console.log("deposit result", result);
+    return result;
+  } catch (error) {
+    console.log("deposit error", error);
+    return { error };
+  }
+};
+
+const withdraw = async (amount: number) => {
+  try {
+    console.log("calling withdraw api", amount);
+    const result = await Api.post(userRoutes.withdraw);
+    console.log("withdraw result", result);
+    return result;
+  } catch (error) {
+    console.log("withdraw error", error);
+    return { error };
+  }
+};
+
+const getBalance = async () => {
+  try {
+    const result = await Api.get(userRoutes.balance);
+    console.log("getBalance result", result);
+    return result;
+  } catch (error) {
+    console.log("getBalance error", error);
+    return { error };
+  }
+};
+
+const getHistory = async (page = 1, limit = 25) => {
+  try {
+    const result = await Api.get(userRoutes.history, {
+      params: { page, limit },
+    });
+    console.log("getHistory result", result);
+    return result;
+  } catch (error) {
+    console.log("getHistory error", error);
+    return { error };
+  }
+};
+
+
+export { signup, login, deposit, withdraw ,getBalance,getHistory};

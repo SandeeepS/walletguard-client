@@ -32,7 +32,7 @@ const userRoutes: RouteObject[] = [
         element: <Layout />,
         children: [
           {
-            path: "homePage",
+            path: "",
             element: <HomePage />,
           },
         ],
