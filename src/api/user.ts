@@ -41,6 +41,7 @@ const login = async (email: string, password: string) => {
     return result;
   } catch (error) {
     console.log("error from the login from the ueser.ts", error as Error);
+    throw error;
   }
 };
 
@@ -92,4 +93,14 @@ const getHistory = async (userId:string, page = 1, limit = 25) => {
   }
 };
 
-export { signup, login, deposit, withdraw, getBalance, getHistory };
+const logout = async () => {
+  try {
+    console.log("entered in the logout function user.ts");
+    return await Api.get(userRoutes.logout);
+  } catch (error) {
+    console.log("error in the logout in the user.ts", error as Error);
+    return {error}
+  }
+};
+
+export { signup, login, deposit, withdraw, getBalance, getHistory,logout };

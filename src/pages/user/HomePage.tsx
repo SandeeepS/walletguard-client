@@ -16,22 +16,24 @@ const HomePage: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState<"DEPOSIT" | "WITHDRAW">("DEPOSIT");
   const [walletBalance, setWalletBalance] = useState<number>(0);
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const userId = userData?.id;
 
   const fetchBalance = async () => {
     if (!userId) return;
     try {
       const response = await getBalance(userId);
+      console.log("result is", response);
       if (
         response &&
         typeof response === "object" &&
         "data" in response &&
         response.data?.success
       ) {
-        // make sure it's a number
         const serverBalance = Number(response.data.data.balance ?? 0);
         setWalletBalance(serverBalance);
+      } else {
+        toast.error("Balace fetching failed!!");
       }
     } catch (err) {
       console.error("Error fetching balance", err);
@@ -104,8 +106,8 @@ const navigate = useNavigate();
     }
   };
   const handleTransactionHistory = () => {
-    navigate('/history');
-  }
+    navigate("/history");
+  };
 
   return (
     <>
@@ -134,8 +136,7 @@ const navigate = useNavigate();
             icon={<FaHistory size={28} />}
             iconBgColor="bg-blue-500/20"
             iconColor="text-blue-400"
-            onClick={() => handleTransactionHistory()
-            }
+            onClick={() => handleTransactionHistory()}
           />
         </div>
 
@@ -146,7 +147,6 @@ const navigate = useNavigate();
           type={modalType}
           onSubmit={handleTransactionSubmit}
         />
-     
       </div>
     </>
   );

@@ -23,15 +23,15 @@ const LoginPage: React.FC = () => {
       try {
         setIsLoading(true);
         const response = await login(values.email, values.password);
+        console.log("respoonse issssss",response);
         const loginResp = response?.data?.data;
         console.log("response from the backend is ", loginResp);
 
-        if (response?.data?.success && loginResp != null) {
+        if (response?.data?.success && response.data.data) {
           dispatch(setUserCredential(loginResp));
           navigate("/homepage");
         } else {
-          console.log("login failed ");
-          toast.error("Email or Password is incorrect!!");
+            toast.error(response?.data.message)
         }
       } catch (error) {
         console.log("error while login user in the login page", error);

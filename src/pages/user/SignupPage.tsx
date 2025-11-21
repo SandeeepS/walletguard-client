@@ -39,8 +39,11 @@ const SignupPage: React.FC = () => {
         ) {
           toast.success("Signup successful!");
           navigate("/auth/login");
-        } else {
-          toast.error("Sigup failed");
+        } else if ("data" in response && response.data) {
+          toast.error(response.data.message);
+          navigate("/auth/signup");
+        } else if ("error" in response) {
+          toast.error("Signup failed. Please try again.");
           navigate("/auth/signup");
         }
       } catch (error) {

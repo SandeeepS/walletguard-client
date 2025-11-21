@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import ConfirmModal from "../common/ConfirmModal";
 import { useAppSelector, type RootState } from "../../app/store";
 import { userLogout } from "../../app/slices/authSlice";
+import { logout } from "../../api/user";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const Header: React.FC = () => {
 
   const handleLogoutConfirmed = () => {
     localStorage.removeItem("token");
+    logout().then(() => console.log(""));
     dispatch(userLogout());
     navigate("/login");
     setShowLogoutModal(false);
@@ -37,14 +39,14 @@ const Header: React.FC = () => {
           <nav className="flex items-center space-x-4">
             <>
               <ul>
-                <li
+                {/* <li
                   onClick={() => {
-                    navigate("/homepage");
+                    navigate("/");
                   }}
                   className="cursor-pointer text-white mx-2"
                 >
                   HOME
-                </li>
+                </li> */}
               </ul>
 
               <div>
@@ -56,7 +58,7 @@ const Header: React.FC = () => {
                   className="flex items-center space-x-2 text-white hover:text-gray-300 transition-colors"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+                    src="https://t3.ftcdn.net/jpg/06/19/26/46/360_F_619264680_x2PBdGLF54sFe7kTBtAvZnPyXgvaRw0Y.jpg"
                     alt="Profile"
                     className="w-8 h-8 rounded-full border border-white"
                   />
@@ -77,13 +79,8 @@ const Header: React.FC = () => {
 
                 {showDropdown && (
                   <div className="absolute right-0 mt-2 w-48 bg-[#1a1a1a] border border-gray-700 rounded-lg shadow-lg py-1 z-40">
-                    <a
-                      href="/myposts"
-                      className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
-                    >
-                      Your Posts
-                    </a>
-                    <hr className="border-gray-700 my-1" />
+                
+                    {/* <hr className="border-gray-700 my-1" /> */}
                     <button
                       onClick={() => setShowLogoutModal(true)}
                       className="w-full text-left px-4 py-2 text-sm text-white hover:bg-gray-700"
