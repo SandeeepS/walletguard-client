@@ -35,10 +35,6 @@ const TransactionHistory: React.FC = () => {
     fetchTransactionHistory();
   }, [userId]);
 
-  useEffect(() => {
-    console.log("hiiiiiiiiiiiii", transactions);
-  });
-
   const getStatusColor = (status: string) => {
     switch (status) {
       case "completed":
@@ -54,7 +50,7 @@ const TransactionHistory: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Header Section */}
+      {/* header */}
       <div className="bg-linear-to-r from-slate-800/50 to-slate-900/50 border-b border-slate-700/50 backdrop-blur-sm sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-center">
@@ -72,7 +68,7 @@ const TransactionHistory: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Content */}
+      {/* main content */}
       <div className="w-full h-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {loading ? (
           <div className="flex flex-col items-center justify-center py-20">
@@ -107,6 +103,7 @@ const TransactionHistory: React.FC = () => {
                   <th className="text-left py-4 px-6 text-slate-300 font-semibold text-sm uppercase tracking-wider">
                     Amount
                   </th>
+                  {/***data column is used for future use  */}
                   {/* <th className="text-left py-4 px-6 text-slate-300 font-semibold text-sm uppercase tracking-wider">
                     Date
                   </th> */}
@@ -141,9 +138,10 @@ const TransactionHistory: React.FC = () => {
                       </span>
                     </td>
                     <td className="py-5 px-6 text-white font-bold text-base">
-                      ₹{(transaction.amount/100).toLocaleString()}
+                      ₹{(transaction.amount / 100).toLocaleString()}
                     </td>
-                    {/* <td className="py-5 px-6 text-slate-400 text-sm">
+                    {/* date raw for future use 
+                    <td className="py-5 px-6 text-slate-400 text-sm">
                       {transaction.date}
                     </td> */}
                     <td className="py-5 px-6">
@@ -161,7 +159,7 @@ const TransactionHistory: React.FC = () => {
             </table>
           </div>
         )}
-      </div>      
+      </div>
     </div>
   );
 };
