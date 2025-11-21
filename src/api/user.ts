@@ -44,10 +44,10 @@ const login = async (email: string, password: string) => {
   }
 };
 
-const deposit = async (amount: number) => {
+const deposit = async (userId: string, amount: number) => {
   try {
     console.log("calling deposit api", amount);
-    const result = await Api.post(userRoutes.deposit, amount);
+    const result = await Api.post(userRoutes.deposit, { userId, amount });
     console.log("deposit result", result);
     return result;
   } catch (error) {
@@ -56,10 +56,10 @@ const deposit = async (amount: number) => {
   }
 };
 
-const withdraw = async (amount: number) => {
+const withdraw = async (userId: string, amount: number) => {
   try {
-    console.log("calling withdraw api", amount);
-    const result = await Api.post(userRoutes.withdraw);
+    console.log("calling withdraw api", { userId, amount });
+    const result = await Api.post(userRoutes.withdraw, { userId, amount });
     console.log("withdraw result", result);
     return result;
   } catch (error) {
@@ -68,9 +68,9 @@ const withdraw = async (amount: number) => {
   }
 };
 
-const getBalance = async () => {
+const getBalance = async (userId: string) => {
   try {
-    const result = await Api.get(userRoutes.balance);
+    const result = await Api.get(userRoutes.balance, { params: { userId } });
     console.log("getBalance result", result);
     return result;
   } catch (error) {
@@ -79,10 +79,10 @@ const getBalance = async () => {
   }
 };
 
-const getHistory = async (page = 1, limit = 25) => {
+const getHistory = async (userId:string, page = 1, limit = 25) => {
   try {
     const result = await Api.get(userRoutes.history, {
-      params: { page, limit },
+      params: {userId, page, limit },
     });
     console.log("getHistory result", result);
     return result;
@@ -92,5 +92,4 @@ const getHistory = async (page = 1, limit = 25) => {
   }
 };
 
-
-export { signup, login, deposit, withdraw ,getBalance,getHistory};
+export { signup, login, deposit, withdraw, getBalance, getHistory };

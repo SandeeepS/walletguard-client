@@ -1,8 +1,10 @@
-import React from "react";
+import { FaRupeeSign } from "react-icons/fa";
 
-const MainWalletCard: React.FC = () => {
-  const walletBalance = "₹12,450.00";
+type Props = {
+  balance?: number;
+};
 
+const MainWalletCard: React.FC<Props> = ({ balance = 0 }) => {
   return (
     <div>
       <div className="flex flex-col justify-center items-center">
@@ -20,8 +22,12 @@ const MainWalletCard: React.FC = () => {
             <div className="text-sm font-medium opacity-70 mb-1">
               Current Balance
             </div>
-            <div className="font-bold text-4xl md:text-5xl mb-4">
-              {walletBalance}
+            <div className="flex justify-between ">
+              <FaRupeeSign className="w-12 h-12" />
+
+              <div className="font-bold text-4xl md:text-5xl mb-4">
+                {balance}
+              </div>
             </div>
 
             <div className="flex gap-2 mt-4">

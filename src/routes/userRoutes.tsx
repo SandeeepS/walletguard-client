@@ -6,6 +6,7 @@ import SignupPage from "../pages/user/SignupPage";
 import LoginPage from "../pages/user/LoginPage";
 import UserLoggedIn from "../pages/user/UserLoggedIn";
 import HomePage from "../pages/user/HomePage";
+import TransactionHistory from "../pages/user/TransactionHistory";
 // import Layout from "../pages/user/Layout";
 
 const userRoutes: RouteObject[] = [
@@ -35,6 +36,10 @@ const userRoutes: RouteObject[] = [
             path: "",
             element: <HomePage />,
           },
+          {
+            path:"/history",
+            element: <TransactionHistory />
+          }
         ],
       },
     ],
