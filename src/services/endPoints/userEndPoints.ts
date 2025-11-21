@@ -5,6 +5,7 @@ const userRoutes = {
   withdraw: "/user/withdraw",
   balance: "/user/balance",
   history: "/user/history",
+  logout:"/user/logout"
 };
 
 export default userRoutes;
