@@ -76,7 +76,7 @@ const SignupPage: React.FC = () => {
           noValidate
         >
           <div className="space-y-4">
-            {/* Full Name */}
+            {/* input for  full name */}
             <div>
               <label
                 htmlFor="name"
@@ -103,7 +103,7 @@ const SignupPage: React.FC = () => {
               )}
             </div>
 
-            {/* Phone */}
+            {/* phone input  */}
             <div>
               <label
                 htmlFor="phone"
@@ -130,7 +130,7 @@ const SignupPage: React.FC = () => {
               )}
             </div>
 
-            {/* Email */}
+            {/* email input  */}
             <div>
               <label
                 htmlFor="email"
@@ -157,7 +157,7 @@ const SignupPage: React.FC = () => {
               )}
             </div>
 
-            {/* Password */}
+            {/* password input  */}
             <div>
               <label
                 htmlFor="password"
@@ -181,7 +181,6 @@ const SignupPage: React.FC = () => {
                   className="absolute inset-y-0 right-0 pr-3 flex items-center"
                   onClick={() => setShowPassword(!showPassword)}
                 >
-                  {/* Icon stays same */}
                 </button>
               </div>
               {formik.touched.password && formik.errors.password && (
@@ -191,7 +190,7 @@ const SignupPage: React.FC = () => {
               )}
             </div>
 
-            {/* Confirm Password */}
+            {/* confirm password */}
             <div>
               <label
                 htmlFor="confirmPassword"
@@ -215,7 +214,6 @@ const SignupPage: React.FC = () => {
                   className="absolute inset-y-0 right-0 pr-3 flex items-center"
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 >
-                  {/* Icon stays same */}
                 </button>
               </div>
               {formik.touched.confirmPassword &&
@@ -227,7 +225,7 @@ const SignupPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Submit Button */}
+          {/* submit button */}
           <div>
             <button
               type="submit"
@@ -261,7 +259,7 @@ const SignupPage: React.FC = () => {
             </button>
           </div>
 
-          {/* Divider & Link */}
+          {/* divider */}
           <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
@@ -269,6 +267,8 @@ const SignupPage: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/**sing in option  */}
           <div className="text-center mt-6">
             <p className="text-sm text-gray-400">
               Already have an account?{" "}
