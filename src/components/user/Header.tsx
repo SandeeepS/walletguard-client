@@ -27,19 +27,17 @@ const Header: React.FC = () => {
     <header className="bg-[#121212] border-b border-gray-800 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <div className="flex items-center">
-            {/* <div className="h-8 w-8 rounded-full border border-white flex items-center justify-center mr-3">
-              <img src="" alt="WalletGaurd" className="h-5 w-5" />
-            </div> */}
             <h1 className="text-xl font-bold text-white">WalletGuard</h1>
           </div>
 
-          {/* Navigation */}
+          {/* navigations  */}
           <nav className="flex items-center space-x-4">
             <>
               <ul>
-                {/* <li
+                {/* 
+                for futrue use 
+                <li
                   onClick={() => {
                     navigate("/");
                   }}
@@ -79,8 +77,6 @@ const Header: React.FC = () => {
 
                 {showDropdown && (
                   <div className="absolute right-0 mt-2 w-48 bg-[#1a1a1a] border border-gray-700 rounded-lg shadow-lg py-1 z-40">
-                
-                    {/* <hr className="border-gray-700 my-1" /> */}
                     <button
                       onClick={() => setShowLogoutModal(true)}
                       className="w-full text-left px-4 py-2 text-sm text-white hover:bg-gray-700"
@@ -95,7 +91,7 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/*Logout Confirmation Modal */}
+      {/*logout confirmation modal */}
       <ConfirmModal
         isOpen={showLogoutModal}
         title="Confirm Sign Out"

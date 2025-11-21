@@ -46,6 +46,7 @@ const LoginPage: React.FC = () => {
     <div className="min-h-screen flex items-center justify-center bg-[#121212]">
       <div className="max-w-md w-full">
         <div className="text-center">
+            {/**log for future use  */}
           {/* <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full border-2 border-white mb-4">
             <img src="/logo.png.png" alt="Logo" className="h-6 w-6" />
           </div> */}
@@ -61,7 +62,7 @@ const LoginPage: React.FC = () => {
           noValidate
         >
           <div className="space-y-4">
-            {/* Email Input */}
+            {/* email Input */}
             <div>
               <label
                 htmlFor="email"
@@ -87,7 +88,7 @@ const LoginPage: React.FC = () => {
               )}
             </div>
 
-            {/* Password Input */}
+            {/* password Input */}
             <div>
               <label
                 htmlFor="password"
@@ -155,7 +156,7 @@ const LoginPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Submit Button */}
+          {/* submit button */}
           <div>
             <button
               type="submit"
@@ -189,7 +190,7 @@ const LoginPage: React.FC = () => {
             </button>
           </div>
 
-          {/* Divider */}
+          {/* divider */}
           <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
@@ -198,7 +199,7 @@ const LoginPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Sign Up Link */}
+          {/* singup option  */}
           <div className="text-center mt-12">
             <p className="text-sm text-gray-400">
               Don't have an account?{" "}

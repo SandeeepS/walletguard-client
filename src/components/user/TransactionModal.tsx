@@ -39,7 +39,7 @@ const TransactionModal : React.FC <TransactionModalProps>=  ({
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
       <div className="bg-linear-to-br from-gray-800 to-gray-900 rounded-lg shadow-2xl max-w-md w-full border border-white/20 relative">
-        {/* Close Button */}
+        {/*close button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
@@ -47,7 +47,7 @@ const TransactionModal : React.FC <TransactionModalProps>=  ({
           <FaTimes size={20} />
         </button>
 
-        {/* Header */}
+        {/* header  */}
         <div className="p-6 border-b border-white/10">
           <div className="flex items-center gap-3">
             <div className={`w-12 h-12 rounded-full ${type === "DEPOSIT" ? "bg-green-500/20 border-green-500/40" : "bg-red-500/20 border-red-500/40"} flex items-center justify-center border-2`}>
@@ -66,7 +66,7 @@ const TransactionModal : React.FC <TransactionModalProps>=  ({
           </div>
         </div>
 
-        {/* Form */}
+        {/* form */}
         <form onSubmit={handleSubmit} className="p-6">
           <div className="mb-6">
             <label className="block text-gray-300 text-sm font-semibold mb-2">

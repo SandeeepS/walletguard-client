@@ -9,9 +9,12 @@ import { deposit, getBalance, withdraw } from "../../api/user";
 import { useAppSelector } from "../../app/store";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { userLogout } from "../../app/slices/authSlice";
 
 const HomePage: React.FC = () => {
   const userData = useAppSelector((state) => state.auth.userData);
+  const dispatch = useDispatch();
 
   const [modalOpen, setModalOpen] = useState(false);
   const [modalType, setModalType] = useState<"DEPOSIT" | "WITHDRAW">("DEPOSIT");
@@ -33,7 +36,8 @@ const HomePage: React.FC = () => {
         const serverBalance = Number(response.data.data.balance ?? 0);
         setWalletBalance(serverBalance);
       } else {
-        toast.error("Balace fetching failed!!");
+        toast.error("Login again!");
+        dispatch(userLogout());
       }
     } catch (err) {
       console.error("Error fetching balance", err);
@@ -43,7 +47,7 @@ const HomePage: React.FC = () => {
   // initial load
   useEffect(() => {
     if (userId) fetchBalance();
-  }, [userId]);
+  },);
 
   const handleDeposit = () => {
     setModalType("DEPOSIT");
